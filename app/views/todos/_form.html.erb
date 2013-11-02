@@ -1,29 +1,27 @@
-<%= form_for(@todo) do |f| %>
-  <% if @todo.errors.any? %>
+<%= form_for(todo, html: {class: "form-inline row"}) do |f| %>
+  <% if todo.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
-
+      <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
       <ul>
-      <% @todo.errors.full_messages.each do |msg| %>
+      <% todo.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+  <% end %> 
+<div class="col-xs-6">
+  <div class="form-group">
+    <%= f.text_field :description %> 
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :completed %><br>
+  <div class="checkbox">
     <%= f.check_box :completed %>
   </div>
-  <div class="actions">
+  <div class="actions btn">
     <%= f.submit %>
+  </div>
+    <div class="actions btn close">
+    <%= link_to todo, method: :delete, data: { confirm: 'Are you sure?' } do %>
+      &times;
+    <% end %>
   </div>
 <% end %>
