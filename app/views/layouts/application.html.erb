@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homepage</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<nav class="navbar navbar-default" role="navigation">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target='#navigation-collapse'>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+			<a class="navbar-brand" href="/">Homepage</a>
+	</div> 
+	<div class="collapse navbar-collapse" id="navigation-collapse">
+		<ul class="nav navbar-nav">
+			<li><a href="#">Calander</a></li>
+			<li><a href="#">Weather</a></li>
+			<li><a href="#">Social</a></li>
+		</ul>
+	</div>
+</nav>
+	<div class="container">
+		<%= yield %>
+	</div>
+</body>
+</html>
