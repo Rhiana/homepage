@@ -25,6 +25,12 @@
 	</div>
 </nav>
 	<div class="container">
+		<div class="has-success">
+			<p class="help-block"><%= flash[:notice] %></p>
+		</div>
+		<div class="has-error">
+			<p class="help-block"><%= flash[:error] %></p>
+		</div>
 		<%= yield %>
 	</div>
 </body>
