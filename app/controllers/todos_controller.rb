@@ -6,19 +6,6 @@ class TodosController < ApplicationController
     @todos = Todo.all
   end
 
-  # GET /todos/1
-  def show
-  end
-
-  # GET /todos/new
-  def new
-    @todo = Todo.new
-  end
-
-  # GET /todos/1/edit
-  def edit
-  end
-
   # POST /todos
   def create
     @todo = Todo.new(todo_params)
@@ -28,7 +15,8 @@ class TodosController < ApplicationController
         flash[:notice] = 'To Do was successfully created.'
         format.html { redirect_to action: 'index'}
       else
-        format.html { render action: 'new' }
+        flash[:error] = "Could not create todo."
+        format.html { redirect_to action: 'index' }
       end
     end
   end
@@ -40,7 +28,8 @@ class TodosController < ApplicationController
         flash[:notice] = 'To Do was successfully updated.'
         format.html { redirect_to action: 'index'}
       else
-        format.html { render action: 'edit' }
+        flash[:error] = "Could not update todo."
+        format.html { redirect_to action: 'index' }
       end
     end
   end

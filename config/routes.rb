@@ -1,5 +1,5 @@
 Homepage::Application.routes.draw do
-  resources :todos
+  resources :todos, except: [ :show, :edit, :new ]
   root 'todos#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
