@@ -15,7 +15,7 @@ class TodosController < ApplicationController
         flash[:notice] = 'To Do was successfully created.'
         format.html { redirect_to action: 'index'}
       else
-        flash[:error] = "Could not create todo."
+        flash[:error] = "Cannot create a blank to do item."
         format.html { redirect_to action: 'index' }
       end
     end
@@ -28,7 +28,7 @@ class TodosController < ApplicationController
         flash[:notice] = 'To Do was successfully updated.'
         format.html { redirect_to action: 'index'}
       else
-        flash[:error] = "Could not update todo."
+        flash[:error] = "Cannot update to a blank to do item."
         format.html { redirect_to action: 'index' }
       end
     end
