@@ -12,3 +12,8 @@
  *= require_tree .
  *= require bootstrap
  */
+
+.alert {
+	margin: 0 !important;
+	padding: 5px !important;
+}
