@@ -2,10 +2,13 @@
 	<div class="todo-head">
 		<h1>To Do</h1>
 	</div>
-
 	<ul><% @todos.each do | todo | %>
 	<li><%= render 'form', :todo => todo %></li>
 	<% end %>
 	<li><%= render 'form', :todo => Todo.new %></li>
+	</ul>
+
+	<ul class="digg_pagination">
+		<li><%= will_paginate @posts %></li>
 	</ul>
 </div>

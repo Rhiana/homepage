@@ -43,6 +43,16 @@ class TodosController < ApplicationController
     end
   end
 
+  def index
+    @todos = Todo.paginate(:page => params[:page], 
+      :order => 'created_at DESC', 
+      :per_page => 10)
+        respond_to do |format|
+        format.html
+        format.json { render json: @todos }
+      end 
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_todo
