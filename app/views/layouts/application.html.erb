@@ -55,15 +55,12 @@
 	</div>
 </nav>
 	<div class="container">
-		<div class="has-success">
-			<p class="help-block"><%= flash[:notice] %></p>
-		</div>
-		<div class="has-error">
-			<p class="help-block"><%= flash[:alert] %></p>
-		</div>
-		<div class="has-error">
-			<p class="help-block"><%= flash[:error] %></p>
-		</div>
+		 <% flash.each do |type, message| %>
+            <div class="alert <%= flash_class type %>">
+                <button class="close" data-dismiss="alert">x</button>
+                <%= message %>
+            </div>
+        <% end %>
 		<%= yield %>
 	</div>
 </body>
