@@ -43,6 +43,15 @@
 			</li>
 			<li><a href="https://www.google.com/calendar/">Calander</a></li>
 		</ul>
+		<ul class="nav navbar-nav pull-right">
+            <% if user_signed_in? %>
+	            <li><%= link_to current_user.email, edit_user_registration_path %></li>
+	            <li><%= link_to "Log Out", logout_path %> </li>
+            <% else %>
+	            <li><%= link_to "Register",register_path %></li>
+	            <li><%= link_to "Log in", login_path %></li>
+            <% end %>
+		</ul>
 	</div>
 </nav>
 	<div class="container">
