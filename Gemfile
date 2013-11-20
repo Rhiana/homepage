@@ -43,6 +43,8 @@ gem 'rails-bootstrap'
 
 gem 'devise'
 
+gem 'will_paginate', '~> 3.0'
+
 #gem 'simple_form'
 
 # Use ActiveModel has_secure_password
