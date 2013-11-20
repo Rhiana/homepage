@@ -1,4 +1,5 @@
 Homepage::Application.routes.draw do
+  devise_for :users
   resources :todos, except: [ :show, :edit, :new ]
   root 'todos#index'
 
