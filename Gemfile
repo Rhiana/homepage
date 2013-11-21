@@ -47,7 +47,7 @@ gem 'will_paginate', '~> 3.0.5'
 
 gem 'calendrier'
 
-gem 'event-calendar'
+gem 'event-calendar', :require => 'event_calendar'
 
 #gem 'simple_form'
 
