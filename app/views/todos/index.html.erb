@@ -2,7 +2,6 @@
 	<div class="todo-head">
 		<h1>To Do</h1>
 	</div>
-	
 	<ul>
 	<li><%= render 'form', :todo => Todo.new %></li>
 	<% @todos.each do | todo | %>
@@ -13,4 +12,24 @@
 	<ul class="digg_pagination">
 		<li><%= will_paginate @posts %></li>
 	</ul>
+</div>
+<div class="col-xs-6">
+	<div class="todo-head">
+		<h1>Calander</h1>
+	</div>
+	<%= calendrier(:year => Time.now.year, :month => Time.now.month, :day =>Time.now.day, :start_on_monday => false, :display => :month, :title => Time.now.asctime) do |cell_begin_time, cell_end_time| %>
+	  <!-- this code is run for every cell of the calendar -->
+
+	  <% if count_sorted_events(@events_by_date, cell_begin_time, cell_end_time) > 0 %>
+	    <!-- this code is run only there is at least one event between cell begin and end -->
+
+	    <ul>
+	    <% yield_sorted_events(@events_by_date, cell_begin_time, cell_end_time) do |obj| %>
+	      <!-- you may handle event/meeting/... with the obj variable -->
+	      <li><%= obj.title %></li>
+	    <% end %>
+	    </ul>
+	  <% end %>
+
+	<% end %>
 </div>

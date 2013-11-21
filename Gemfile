@@ -45,6 +45,10 @@ gem 'devise'
 
 gem 'will_paginate', '~> 3.0.5'
 
+gem 'calendrier'
+
+gem 'event-calendar'
+
 #gem 'simple_form'
 
 # Use ActiveModel has_secure_password
