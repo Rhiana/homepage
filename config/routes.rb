@@ -1,4 +1,5 @@
 Homepage::Application.routes.draw do
+  get "profiles/show"
   get '/calendar(/:year(/:month))', to: 'calendar#index', as: :calendar, constraints: {  
     year: /\d{4}/, 
     month: /\d{1,2}/
