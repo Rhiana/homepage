@@ -17,3 +17,28 @@
 	margin: 0 !important;
 	padding: 5px !important;
 }
+
+#user_email,
+#user_password,
+#user_password_confirmation,
+#user_current_password,
+.box {
+	border-radius: 5px;
+	padding: 2px;
+	margin-left: 10px;
+}
+
+.sign_in {
+	background-color: #DDD;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+.sign-head {
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.links {
+	margin-top: 20px;
+}
