@@ -3,7 +3,7 @@ class ProfilesController < ApplicationController
   	  	@user = User.find_by_email(params[:user_id])
   	if @user
   		@todos = @user.todos.all
-  		render action: :show
+  		render action: :index
   	else
   		render file: 'public/404', status: 404, formats: [:html]
   	end

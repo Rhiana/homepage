@@ -1,13 +1,17 @@
-// Place all the styles related to the todos controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 ul {
 	list-style: none;
 	margin: 0;
 }
 
+.todo-form {
+	background-color: #EEE;
+	border-radius: 5px;
+	border: 1px solid #DDD;
+	height: 37px;
+}
+
 input[type="text"] {
-	width: 435px;
+	width: 100%; /* 435px*/
 	border: none;
 	margin: 0 10px;
 	padding: 2px;
@@ -25,12 +29,11 @@ p {
 	font-size: 1.125em;
 }
 
-.todo-form {
-	background-color: #EEE;
-	border-radius: 5px;
-	border: 1px solid #DDD;
-}
-
 .todo-head {
 	text-align: center;
 }
+
+#todo_description {
+	width: 100%;
+}
+

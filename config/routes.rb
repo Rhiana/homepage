@@ -1,5 +1,6 @@
 Homepage::Application.routes.draw do
-  get "profiles/show"
+  get "profiles/show", to: 'profiles#show', as: :profile
+
   get '/calendar(/:year(/:month))', to: 'calendar#index', as: :calendar, constraints: {  
     year: /\d{4}/, 
     month: /\d{1,2}/
@@ -16,7 +17,6 @@ Homepage::Application.routes.draw do
 
 
   root 'todos#index'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
